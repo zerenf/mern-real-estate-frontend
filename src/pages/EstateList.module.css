@@ -1,0 +1,134 @@
+/* EstateList.module.css */
+.container {
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+	overflow-x: hidden; /* Yatay scroll'u engelle */
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 10px;
+	border-bottom: 2px solid #000;
+	font-weight: bold;
+	width: 100%;
+	margin: 0 auto 10px auto;
+}
+
+.headerText {
+	flex: 1;
+	text-align: center;
+}
+
+/* Her başlık hücresinin sağ tarafına ince çizgi ekle (son eleman hariç) */
+.headerText:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	width: 100%;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 10px;
+	width: 100%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	gap: 10px;
+}
+
+/* Tüm hücrelere ortak stil */
+.cell {
+	flex: 1;
+	text-align: center;
+	font-size: 14px;
+}
+
+/* Her hücre arasında ince çizgi ekle (son hücre hariç) */
+.cell:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+
+.image {
+	width: 98%;
+	height: 130px;
+	object-fit: cover;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+}
+
+/* Mobilde responsive düzenlemeler */
+@media (max-width: 610px) {
+	.header {
+		display: none; /* Mobilde header'ı gizle */
+	}
+
+	.row {
+		flex-direction: column; /* Mobilde içerikleri dikey sırala */
+		align-items: flex-start; /* Mobilde içerikleri sola hizala */
+		padding: 15px; /* Padding'i artır */
+		gap: 15px; /* Boşlukları artır */
+	}
+
+	/* Mobilde, dikey dizilimde hücreler arası alt kenarlık ekle */
+	.row .cell:not(:last-child) {
+		border-right: none;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.image {
+		width: 100%;
+		height: 120px;
+	}
+
+	.cell {
+		text-align: left; /* Mobilde metinleri sola hizala */
+		width: 100%; /* Hücreleri tam genişlik yap */
+	}
+}
+
+@media (max-width: 410px) {
+	/* Ek responsive düzenlemeler yapılabilir */
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	padding: 0 5px;
+}
+
+.actionBtn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 5px;
+	transition: background 0.3s;
+}
+
+.actionBtn:hover {
+	background: #f0f0f0;
+	border-radius: 4px;
+}
+
+@media (max-width: 610px) {
+	.actions {
+		justify-content: flex-start;
+	}
+	.cell {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
