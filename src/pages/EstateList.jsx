@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom"
 import { FaEye, FaTrash } from "react-icons/fa"
 import { showSuccessToast } from "../utils/toast"
 import styles from "./EstateList.module.css" // CSS Module dosyasını import et
+import Loader from "../components/Loader"
 
 const VITE_LOCALHOST = import.meta.env.VITE_LOCALHOST
 
@@ -22,7 +23,7 @@ const EstateList = () => {
 		showSuccessToast("Emlak başarıyla silindi.")
 	}
 
-	if (loading) return <p>Loading...</p>
+	if (loading) return <Loader />
 
 	return (
 		<div className={styles.container}>
